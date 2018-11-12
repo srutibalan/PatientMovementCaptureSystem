@@ -1,0 +1,110 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    background-color: #7bc143;
+}
+
+    /* Style the buttons inside the tab */
+    div.tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+        /* Change background color of buttons on hover */
+        div.tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        div.tab button.active {
+            background-color: #2ECC71;
+        }
+
+/* Style the tab content */
+.tabcontent {
+    height: 550px;
+    border-top: none;
+}
+
+.centeredContent {
+    text-align: center;
+}
+
+.sensorComboBox {
+    margin-top: 35px;
+    height: 40px;
+    width: 140px;
+    border: double;
+}
+
+.getDetailsBtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #7bc143;
+}
+
+div.centeredTable {
+    margin: 100px;
+    text-align: center;
+}
+
+div.visibleTable {
+    margin: 100px;
+    text-align: center;
+}
+
+div.centeredTable table {
+    margin: auto;
+    text-align: left;
+    width: 900px;
+    align-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+div.visibleTable table {
+    margin: auto;
+    text-align: left;
+    width: 900px;
+    align-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+th {
+    text-align: center;
+}
+
+h1 {
+    font-weight:bold;
+}
+#registryElement {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.marginatedContent {
+    margin-left:10px;
+}
+
+#deleteAllDevicesButton {
+    margin:auto;
+    margin-top:300px;
+    display:block;
+    font-size:30px;
+}
+
+div.dropdown {
+    margin-bottom:10px;
+}
+
