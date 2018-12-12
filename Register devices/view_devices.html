@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="pmcs_style.css">
+    <script type="text/javascript" src="pageLoader.js"></script>
+
+</head>
+<body>
+
+    <div class="tab" id="header">
+        <button type="button" class="tablinks" id="btn-register" onclick="load_device_registry_page();">Register Devices</button>
+        <button type="button" class="tablinks" id="btn-viewdevices" onclick="load_view_devices_page();">View Devices</button>
+        <button type="button" class="tablinks" id="btn-editdevices" onclick="load_edit_devices_page();">Edit Devices</button>
+        <button type="button" class="tablinks" id="btn-viewmessages" onclick="load_view_messages_page();">View Messages</button>
+        <button type="button" class="tablinks" id="btn-postmessages" onclick="load_post_messages_page();">Post Messages</button>
+        <button type="button" class="tablinks" id="btn-deletedevices" onclick="load_delete_devices_page();">Delete Devices</button>
+    </div>
+
+    <div class="centeredContent">
+        <div id="View Devices" class="tabcontent">
+            <h1>Devices</h1>
+            <div class="visibleTable">
+                <table border="1" id="DataTableDevices">
+                    <tr>
+                        <th>Device Name</th>
+                        <th>Device ID</th>
+                        <th>Device Type</th>
+                        <th>Input Pins</th>
+                        <th>Output Pins</th>
+                        <th>Registered Date</th>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/DeviceRegistrationRestAPI/devices",
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (i, obj) {
+                        var div_data = "<tr><td>" +
+                            obj.deviceName + '</td><td>' +
+                            obj.deviceId + '</td><td>' +
+                            obj.deviceType + '</td><td>' +
+                            obj.inputPins + '</td><td>' +
+                            obj.outputPins + '</td><td>' +
+                            obj.registeredDate + '</td></tr>';
+
+                        $('#DataTableDevices').append(div_data);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
